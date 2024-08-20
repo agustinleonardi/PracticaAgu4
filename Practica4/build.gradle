@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.hibernate:hibernate-core:6.0.0.Final'
+    // Hibernate JPA API
+    implementation 'org.hibernate:hibernate-entitymanager:5.4.30.Final'
+    // JPA API
+    implementation 'jakarta.persistence:jakarta.persistence-api:3.0.0'
+    // MySQL connector (opcional, dependiendo de tu base de datos)
+    implementation 'mysql:mysql-connector-java:8.0.26'
+    // Logging dependencies (slf4j)
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'ch.qos.logback:logback-classic:1.2.10'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
